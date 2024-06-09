@@ -4,8 +4,8 @@ An implementation of the AES-256 encryption with cryptoJs.
 ## Usage
 
 In the project directory, you can run:
-### npm install
+###  `npm install`
 Installs the node modules.
 
-### node app.js
+### `node app.js`
 Runs the program.
