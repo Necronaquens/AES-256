@@ -10,4 +10,4 @@ Installs the node modules.
 ### `node app.js`
 Runs the program.
 
-You will need to change the functions that do encryption and decryption or call them somewhere in your project.
+You will need to call the functions 'Encrypt' and 'Decrypt' somewhere in your project.
