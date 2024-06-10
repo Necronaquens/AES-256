@@ -1,19 +1,19 @@
-var crypto = require('crypto');
+const crypto = require('crypto');
 
-var algorithm = 'aes256';
-var inputEncoding = 'utf8';
-var outputEncoding = 'hex';
+const algorithm = 'aes256';
+const inputEncoding = 'utf8';
+const outputEncoding = 'hex';
 
-//Encrypt('text');
-//Decrypt('cypher','key');
+//Encrypt('This phrase will be encrypted.');
+//Decrypt('data','key');
 
 
 function Encrypt(text) {
-    var iv = crypto.randomBytes(16);
+    const iv = crypto.randomBytes(16);
 
     const key = crypto
         .createHash('sha512')
-        .update('secret_key')
+        .update(crypto.randomBytes(16))
         .digest('hex')
         .substring(0, 32)
 
@@ -35,5 +35,5 @@ function Decrypt(ciphertext, key) {
     var deciphered = decipher.update(components.join(':'), outputEncoding, inputEncoding);
     deciphered += decipher.final(inputEncoding);
 
-    console.log('\nDecrypted data: "%s"\n' + deciphered);
+    console.log('\nDecrypted data: "%s"\n', deciphered);
 }
